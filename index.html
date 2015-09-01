@@ -1,0 +1,309 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width">
+
+      <title>App Name</title>
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+      <style>
+
+        body{
+          background-color: #D8D8D8;
+        }
+
+        /*
+          left - validation css
+        */
+        .titles{
+          font-family: "Helvetica Neue", "Helvetica";
+          font-size: 16px;
+        }
+
+        .disabledTitle {
+          text-decoration: line-through;
+        }
+
+        .greenMessage{
+          position: fixed;
+          z-index: 10000;
+          background-color: green;
+          width: 100%;
+          color: white;
+          text-align: center;
+        }
+        .redMessage{
+          position: fixed;
+          z-index: 10000;
+          background-color: red;
+          width: 100%;
+          color: white;
+          text-align: center;
+        }
+
+        .collapsibleItemTitle{
+          border-top: 1px #C0C0C0 solid;
+          padding-top: 10px;
+          padding-bottom: 10px;
+
+        }
+
+        .collapsibleArea{
+        }
+
+        .collapsibleItemContent{
+          margin-left: 30px;
+
+        }
+
+        #left{
+          background-color: white;
+          padding-top: 20px;
+          height: 100vh;
+          overflow: scroll;
+
+        }
+        .reportTitleSection{
+
+        }
+        .icon {
+          width: 16px !important;
+        }
+
+        .expenseTypeLeftMargin{
+          margin-left: 18px;
+          margin-bottom: 10px;
+        }
+
+        .reportCategoryFonts{
+          font-size: 13px;
+          font-weight: 200;
+        }
+
+        .validationTypeTitle{
+          color: #999999;
+          font-weight: 200;
+          text-transform: uppercase;
+        }
+
+        .buttonSpace{
+          text-shadow: none !important;
+          margin-right: 20px;
+        }
+
+        .textbox {
+          margin-left: 17px;
+        }
+
+        .answerText {
+          cursor: pointer;
+        }
+
+        .answerFont{
+          font-size: 13px;
+          margin-left: 20px;
+        }
+
+        .multipleAnswers{
+
+        }
+
+        .extraClearFix{
+          clear:both;
+        }
+
+        .inputIcon{
+          margin-right: 5px !important;
+        }
+
+        .fewAnswers{
+          display: inline-block;
+          margin-right: 15px;
+        }
+
+        /*Collapsible item animatiom*/
+        .expand-enter {
+          max-height: 0;
+          overflow: hidden;
+          opacity: 0;
+        }
+
+        .expand-enter.expand-enter-active {
+          max-height: 800px;
+          transition: all 0.6s;
+          opacity: 1;
+
+        }
+        .expand-leave {
+          max-height: 800px;
+          opacity: 1;
+        }
+
+        .expand-leave.expand-leave-active {
+          max-height: 0;
+          overflow: hidden;
+          opacity: 0;
+          transition: all 0.3s;
+        }
+
+        /* Message animatiom*/
+        .messageTransition-enter {
+          opacity: 0.01;
+        }
+
+        .messageTransition-enter.messageTransition-enter-active {
+          opacity: 1;
+          transition: opacity .3s ease-in;
+
+        }
+        .messageTransition-leave {
+          opacity: 1;
+        }
+
+        .messageTransition-leave.messageTransition-leave-active {
+          opacity: 0.01;
+          transition: opacity .3s ease-in;
+        }
+
+        #submitArea {
+          padding-bottom: 10px;
+        }
+
+        /*
+          right - receipt panel css
+        */
+
+        #right{
+          height: 100vh;
+          overflow: scroll;
+        }
+
+        .panelTools{
+          position: fixed;
+          z-index: 10000;
+        }
+
+
+        .panelIconsClicked{
+          display: inline-block;
+          width: 55px;
+          height: 55px;
+          line-height: 70px;
+          border: 2px #0B6CA5 solid;
+          text-align: center;
+          margin-left: 10px;
+          border-radius: 5px;
+          background-color: #0B6CA5;
+          margin-top: 20px;
+        }
+
+        .panelIcons{
+          display: inline-block;
+          width: 55px;
+          height: 55px;
+          line-height: 70px;
+          border: 2px #0B6CA5 solid;
+          text-align: center;
+          margin-left: 10px;
+          border-radius: 5px;
+          background-color: white;
+          margin-top: 20px;
+        }
+
+        #canvasWrapper{
+          width: 1000px;
+          height:1000px;
+          position: relative;
+
+        }
+        #canvas{
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+        }
+        #receiptImage{
+          max-width: 1000px;
+          max-height: 1000px;
+          width: 800px;
+          z-index: -100;
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          -webkit-touch-callout: none;
+          -webkit-user-select: none;
+          -khtml-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+        }
+
+        .previousImage{
+          position: absolute;
+          left: 50px;
+          top: 47%;
+          height: 100px;
+          opacity: 0.8;
+        }
+
+        .nextImage{
+          position: absolute;
+          right: 50px;
+          top: 47%;
+          height: 100px;
+          opacity: 0.8;
+        }
+
+        .imageBlock{
+          margin-right: 30px;
+          display: inline-block;
+          border: 1px solid black;
+          opacity: 0.4;
+        }
+
+        .imageBlock:hover{
+          cursor: pointer;
+          opacity: 1;
+        }
+
+        .imageBlockSelected{
+          opacity: 1;
+          margin-right: 30px;
+          display: inline-block;
+          border: 1px solid black;
+        }
+
+        .pendingImages{
+          max-height: 125px;
+          max-width: 125px;
+        }
+
+      </style>
+  </head>
+  <body>
+
+    <div id="app"></div>
+<!--     <canvas id="canvas" width="490" height="220"></canvas>
+ -->
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+
+    <script src="/js/main.js"></script>
+
+  </body>
+</html>
