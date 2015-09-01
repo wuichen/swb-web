@@ -9,7 +9,7 @@ var cors = require('cors');
 var app = express();
 app.set('port', (process.env.PORT || 5000));
 
-// app.use(express.static(__dirname + '/build'));
+app.use(express.static(__dirname + '/build'));
 
 
 var APISample;
@@ -27,7 +27,7 @@ app.use(bodyParser.urlencoded({
 
 app.use(cookieParser());
 
-fs.readFile('APISample.json', 'utf8', function(err, data) {
+fs.readFile('/build/APISample.json', 'utf8', function(err, data) {
     if (err) throw err;
     APISample = JSON.parse(data);
 });
