@@ -15,10 +15,6 @@
     "boilerplate"
   ],
   "private": true,
-  "engines": {
-    "node": "^0.12.x",
-    "npm": "^2.1.x"
-  },
   "dependencies": {
     "express": "^4.13.1",
     "body-parser": "^1.13.3",
