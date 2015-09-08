@@ -7,6 +7,7 @@ var fs = require('fs');
 var cors = require('cors');
 
 var app = express();
+app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname + '/build'));
 
@@ -61,12 +62,9 @@ app.get('/ping', cors(corsOptions), function(req, res) {
 })
 
 app.post('/post', cors(corsOptions), function (req, res) {
-  console.log('posted!');
   res.send('success');
 });
 
-var server = app.listen(8080, function() {
-    var host = server.address().address;
-    var port = server.address().port;
-    console.log('Example app listening at http://%s:%s', host, port);
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
 });
