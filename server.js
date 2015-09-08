@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({
 
 app.use(cookieParser());
 
-fs.readFile('./app/js/utils/APISample.json', 'utf8', function(err, data) {
+fs.readFile('build/APISample.json', 'utf8', function(err, data) {
     if (err) throw err;
     APISample = JSON.parse(data);
 });
