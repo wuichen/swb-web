@@ -7,7 +7,6 @@ var fs = require('fs');
 var cors = require('cors');
 
 var app = express();
-app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname + '/build'));
 
@@ -27,7 +26,7 @@ app.use(bodyParser.urlencoded({
 
 app.use(cookieParser());
 
-fs.readFile('build/APISample.json', 'utf8', function(err, data) {
+fs.readFile('./app/js/utils/APISample.json', 'utf8', function(err, data) {
     if (err) throw err;
     APISample = JSON.parse(data);
 });
@@ -62,9 +61,12 @@ app.get('/ping', cors(corsOptions), function(req, res) {
 })
 
 app.post('/post', cors(corsOptions), function (req, res) {
+  console.log('posted!');
   res.send('success');
 });
 
-app.listen(app.get('port'), function() {
-  console.log('Node app is running on port', app.get('port'));
+var server = app.listen(8080, function() {
+    var host = server.address().address;
+    var port = server.address().port;
+    console.log('Example app listening at http://%s:%s', host, port);
 });
