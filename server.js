@@ -32,7 +32,7 @@ fs.readFile('APISample.json', 'utf8', function(err, data) {
     APISample = JSON.parse(data);
 });
 
-var whitelist = ['http://localhost:3001','http://localhost:8080','http://serviceworkbench.firebaseapp.com/'];
+var whitelist = ['http://serviceworkbench.firebaseapp.com/','https://serviceworkbench.firebaseapp.com/'];
 var corsOptions = {
     origin: function(origin, callback) {
         var originIsWhitelisted = whitelist.indexOf(origin) !== -1;
