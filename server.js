@@ -58,7 +58,7 @@ app.get('/next', cors(corsOptions), function(req, res) {
 });
 
 app.get('/ping', cors(corsOptions), function(req, res) {
-    res.send({isConnected: true});
+    res.json({isConnected: true});
 })
 
 app.post('/post', cors(corsOptions), function (req, res) {
