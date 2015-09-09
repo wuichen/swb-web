@@ -10,7 +10,7 @@ var app = express();
 app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname + '/build'));
-
+app.use(cors());
 
 var APISample;
 
@@ -40,7 +40,7 @@ var corsOptions = {
     }
 };
 
-app.get('/next', cors(corsOptions), function(req, res) {
+app.get('/next', function(req, res) {
     var APISamples = [];
     var reportTempIndex = 0;
 
@@ -57,11 +57,11 @@ app.get('/next', cors(corsOptions), function(req, res) {
    // .send('Not found');
 });
 
-app.get('/ping', cors(corsOptions), function(req, res) {
+app.get('/ping', function(req, res) {
     res.json({isConnected: true});
 })
 
-app.post('/post', cors(corsOptions), function (req, res) {
+app.post('/post', function (req, res) {
   res.json('success');
 });
 
