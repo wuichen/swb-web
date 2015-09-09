@@ -62,7 +62,7 @@ app.get('/ping', cors(corsOptions), function(req, res) {
 })
 
 app.post('/post', cors(corsOptions), function (req, res) {
-  res.send('success');
+  res.json('success');
 });
 
 app.listen(app.get('port'), function() {
