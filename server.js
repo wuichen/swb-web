@@ -40,7 +40,7 @@ var corsOptions = {
     }
 };
 
-app.get('/next', cors(corsOptions), function(req, res) {
+app.get('/next', cors(), function(req, res) {
     var APISamples = [];
     var reportTempIndex = 0;
 
@@ -57,11 +57,11 @@ app.get('/next', cors(corsOptions), function(req, res) {
    // .send('Not found');
 });
 
-app.get('/ping', cors(corsOptions), function(req, res) {
+app.get('/ping', cors(), function(req, res) {
     res.json({isConnected: true});
 })
 
-app.post('/post', cors(corsOptions), function (req, res) {
+app.post('/post', cors(), function (req, res) {
   res.send('success');
 });
 
