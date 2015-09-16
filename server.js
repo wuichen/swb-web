@@ -27,12 +27,12 @@ app.use(bodyParser.urlencoded({
 
 app.use(cookieParser());
 
-fs.readFile('APISample.json', 'utf8', function(err, data) {
+fs.readFile('./app/js/utils/APISample.json', 'utf8', function(err, data) {
     if (err) throw err;
     APISample = JSON.parse(data);
 });
 
-var whitelist = ['https://serviceworkbench.firebaseapp.com'];
+var whitelist = ['http://localhost:3001','localhost:3001','localhost:5000','http://localhost:5000','https://serviceworkbench.firebaseapp.com'];
 var corsOptions = {
     origin: function(origin, callback) {
         var originIsWhitelisted = whitelist.indexOf(origin) !== -1;
@@ -62,7 +62,7 @@ app.get('/ping', cors(corsOptions), function(req, res) {
 })
 
 app.post('/post', cors(corsOptions), function (req, res) {
-  res.json('success');
+  res.send('success');
 });
 
 app.listen(app.get('port'), function() {
