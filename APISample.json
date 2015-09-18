@@ -486,7 +486,7 @@
 	}],
 	"LineItem": [{
 		"ApprovedAmount": "56.00000000",
-		"LinePictures": [{"url":"http://arachnoid.com/alaska2003/posing_bear_full_size.jpg"}, {"url":"http://s3-media4.fl.yelpcdn.com/bphoto/eTxwKJdgj_jLmMhIqItO4A/o.jpg"}, {"url":"http://s3-media2.fl.yelpcdn.com/bphoto/XtRAlFu9Asiez68rTAi_nQ/348s.jpg"}],
+		"LinePictures": [{"url":"http://www.chem.uni-wuppertal.de/conference/photo2014/BOLOGNA2014_Participants.jpg"}, {"url":"hhttp://www.chem.uni-wuppertal.de/conference/photo2014/BOLOGNA2014_Participants.jpg"}, {"url":"http://s3-media2.fl.yelpcdn.com/bphoto/XtRAlFu9Asiez68rTAi_nQ/348s.jpg"}],
 		"LegibleReceiptRequired": true,
 		"CctKey": "",
 		"CrnKey": 3,
@@ -1676,7 +1676,7 @@
 		}],
 		"LineItem": [{
 			"ApprovedAmount": "56.00000000",
-			"LinePictures": [{"url":"http://arachnoid.com/alaska2003/posing_bear_full_size.jpg"}, {"url":"http://s3-media4.fl.yelpcdn.com/bphoto/eTxwKJdgj_jLmMhIqItO4A/o.jpg"}, {"url":"http://s3-media2.fl.yelpcdn.com/bphoto/XtRAlFu9Asiez68rTAi_nQ/348s.jpg"}],
+			"LinePictures": [{"url":"http://www.chem.uni-wuppertal.de/conference/photo2014/BOLOGNA2014_Participants.jpg"}, {"url":"http://www.chem.uni-wuppertal.de/conference/photo2014/BOLOGNA2014_Participants.jpg"}, {"url":"http://s3-media2.fl.yelpcdn.com/bphoto/XtRAlFu9Asiez68rTAi_nQ/348s.jpg"}],
 			"LegibleReceiptRequired": true,
 			"CctKey": "",
 			"CrnKey": 3,
@@ -2848,7 +2848,7 @@
 		}],
 		"LineItem": [{
 			"ApprovedAmount": "56.00000000",
-			"LinePictures": [{"url":"http://arachnoid.com/alaska2003/posing_bear_full_size.jpg"}, {"url":"http://s3-media4.fl.yelpcdn.com/bphoto/eTxwKJdgj_jLmMhIqItO4A/o.jpg"}, {"url":"http://s3-media2.fl.yelpcdn.com/bphoto/XtRAlFu9Asiez68rTAi_nQ/348s.jpg"}],
+			"LinePictures": [{"url":"http://www.chem.uni-wuppertal.de/conference/photo2014/BOLOGNA2014_Participants.jpg"}, {"http://www.chem.uni-wuppertal.de/conference/photo2014/BOLOGNA2014_Participants.jpg"}, {"url":"http://s3-media2.fl.yelpcdn.com/bphoto/XtRAlFu9Asiez68rTAi_nQ/348s.jpg"}],
 			"LegibleReceiptRequired": true,
 			"CctKey": "",
 			"CrnKey": 3,
